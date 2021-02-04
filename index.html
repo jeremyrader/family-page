@@ -89,15 +89,16 @@
             function unlockPage() {
                 const submitted = localStorage.getItem('submitted')
 
-                if (submitted) {
-                    document.getElementById('unlock').disabled = true
-                }
-                
                 document.getElementById('logged-in').style.display = 'block'
                 document.getElementById('front-panel').style.display = 'none'
 
+                if (submitted) {
+                    document.getElementById('unlock').disabled = true
+                }
+
                 document.getElementById("submit").addEventListener("click", function(event) {
                     localStorage.setItem('submitted', true)
+                    document.getElementById('unlock').disabled = true
                 })
             }
           </script>
