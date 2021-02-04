@@ -5,7 +5,7 @@
     <body>
         
         <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div id="logged-in" style="display:none;">
+            <div id="logged-in" style="display:none;" class="max-w-md w-full space-y-8">
                 <img src="https://73v3u36iopz178i0z3a33g7d-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Lucky-Litmos-Lenny_Day-768x461.png" />
                 <p>Hi everyone!</p>
 
@@ -89,12 +89,15 @@
             function unlockPage() {
                 const submitted = localStorage.getItem('submitted')
 
+                if (submitted) {
+                    document.getElementById('unlock').disabled = true
+                }
+                
                 document.getElementById('logged-in').style.display = 'block'
                 document.getElementById('front-panel').style.display = 'none'
 
                 document.getElementById("submit").addEventListener("click", function(event) {
                     localStorage.setItem('submitted', true)
-                    document.getElementById('unlock').disabled = true
                 })
             }
           </script>
