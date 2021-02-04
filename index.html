@@ -94,6 +94,7 @@
 
                 document.getElementById("submit").addEventListener("click", function(event) {
                     localStorage.setItem('submitted', true)
+                    document.getElementById('unlock').disabled = true
                 })
             }
           </script>
