@@ -69,7 +69,7 @@
                         should work on first
                     </p>
 
-                    <form name="requests" netlify>
+                    <form name="requests" method="POST" netlify>
                         <div class="mb-2">
                             <input type="radio" id="photos" name="request" value="Photos">
                             <label for="photos">Upload family photos</label>
@@ -92,7 +92,6 @@
                 `
 
                 document.getElementById("submit").addEventListener("click", function(event) {
-                    console.log('hey')
                     localStorage.setItem('submitted', true)
                 })
             }
