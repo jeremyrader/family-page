@@ -2,79 +2,87 @@
     <head>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     </head>
-    <body>
-        
+    <body>  
         <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div id="front-panel" class="max-w-md w-full space-y-8" style="display:none;">
+                <h1 class="text-xl font-bold text-center">Rader Family Website</h1>
+                <form class="mt-8 space-y-6">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label for="password" class="sr-only">Password</label>
+                            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+                            <p class="ml-2 text-sm mt-1 font-light italic">What do you look forward to me saying every Christmas? (no spaces or punctuation</p>
+                        </div>
+                    </div>
+          
+                    <div>
+                        <button
+                            id="unlock"
+                            type="submit"
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <!-- Heroicon name: solid/lock-closed -->
+                                <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            Unlock
+                        </button>
+                    </div>
+                </form>
+            </div>
+
             <div id="logged-in" style="display:none;" class="max-w-md w-full space-y-8">
                 <img src="https://73v3u36iopz178i0z3a33g7d-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Lucky-Litmos-Lenny_Day-768x461.png" />
                 <p>Hi everyone!</p>
-
+    
                 <p>I bet you thought you were going to find a video of me saying it, right? Nope! That's only on Christmas!</p>
                 
                 <p>
-                    I thought it'd be fun to setup a family page. Since quite a few of us are of facebook
-                    I thought it'd be nice to have a place to share thoughts, photos, and stupid memes with each other.
+                    I thought it'd be fun to setup a family page. Quite a few of us aren't on Facebook anymore so
+                    I thought it'd be nice to have a place to share updates, photos, and Nicholas Cage memes with each other.
                     There's quite a bit of work to do to make that happen so I thought we could put it to a vote what I
-                    should work on first
+                    should work on first.
                 </p>
-
+    
+                <p class="font-bold">Things to work on next:</p>
                 <form name="requests" method="POST" data-netlify="true">
-                    <div class="mb-2">
-                        <input type="radio" id="photos" name="request" value="Photos">
-                        <label for="photos">Upload family photos</label>
-                    </div>
                     <div class="mb-2">
                         <input type="radio" id="posts" name="request" value="Posts">
                         <label for="posts">Post updates (just text for now)</label>
                     </div>
                     <div class="mb-2">
+                        <input type="radio" id="photos" name="request" value="Photos">
+                        <label for="photos">Share family photos</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="radio" id="memes" name="request" value="Memes">
+                        <label for="memes">Post dumb memes</label>
+                    </div>
+                    <div class="mb-5">
                         <input type="radio" id="chat" name="request" value="Chat">
                         <label for="chat">Chat room</label>
                     </div>
-                    <div class="mb-2">
-                        <input class="ml-5" type="text" name="other" placeholder="Other">
+                    <div class="mb-7">
+                        <input class="border" type="text" name="other" placeholder="Other" autocomplete="off">
                     </div>
                     <div class="mb-2">
-                        <input name="submit" id="submit" ${ submitted ? 'disabled' : '' } class="px-8 py-3 border border-transparent rounded-md text-white ${ submitted ? 'bg-gray-600' : 'cursor-pointer bg-blue-600 hover:bg-blue-700' }" type="submit"></button>
+                        <input name="submit" id="submit" class="px-8 py-3 border border-transparent rounded-md text-white cursor-pointer bg-blue-600 hover:bg-blue-700" type="submit"></button>
                     </div>
                 </form>
             </div>
-            <div id="front-panel" class="max-w-md w-full space-y-8">
-              <h1 class="text-xl font-bold text-center">Rader Family Website</h1>
-              <form class="mt-8 space-y-6">
-                <div class="rounded-md shadow-sm -space-y-px">
-                  <div>
-                    <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-                    <p class="ml-2 text-sm mt-1 font-light italic">What do you look forward to me saying every Christmas? (no spaces or punctuation</p>
-                  </div>
-                </div>
-          
-                <div>
-                  <button
-                    id="unlock"
-                    type="submit"
-                    class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                      <!-- Heroicon name: solid/lock-closed -->
-                      <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                      </svg>
-                    </span>
-                    Unlock
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
 
-          <script>
+        </div>
+          
+
+        <script>
             const unlocked = localStorage.getItem('unlocked')
 
             if (unlocked) {
                 unlockPage()
             }
             else {
+                document.getElementById('front-panel').style.display = 'block'
                 document.getElementById("unlock").addEventListener("click", function(event){
                     event.preventDefault()
 
@@ -93,15 +101,20 @@
                 document.getElementById('front-panel').style.display = 'none'
 
                 if (submitted) {
-                    document.getElementById('unlock').disabled = true
+                    document.getElementById('submit').disabled = true
+                    document.getElementById('submit').classList.remove("bg-blue-600")
+                    document.getElementById('submit').classList.remove("hover:bg-blue-700")
+                    document.getElementById('submit').classList.remove("cursor-pointer")
+
+                    document.getElementById('submit').classList.add("bg-gray-600")
                 }
+                    
 
                 document.getElementById("submit").addEventListener("click", function(event) {
                     localStorage.setItem('submitted', true)
-                    document.getElementById('unlock').disabled = true
                 })
             }
-          </script>
+        </script>
 
     </body>
 </html>
