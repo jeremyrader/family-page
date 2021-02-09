@@ -14,8 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-        { rel: 'icon', type: 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css', href: '/favicon.ico' },
-        { rel: 'stylesheet', href: '/favicon.ico' },
+        { rel: 'stylesheet', href: 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' }
     ],
     script: [
       { type: 'text/javascript', src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }

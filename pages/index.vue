@@ -1,8 +1,5 @@
 <template>
-  <div class="container">
-    <div data-netlify-identity-menu></div>
-    <div data-netlify-identity-button>Login with Netlify Identity</div>
-  </div>
+
 </template>
 
 <script lang="ts">
@@ -10,6 +7,7 @@ import Vue from 'vue'
 
 interface netlifyIdentity {
   open: Function,
+  close: Function,
   currentUser: Function,
   on: Function
 }
@@ -20,23 +18,38 @@ interface User {
 }
 
 declare global {
-    interface Window {
-        netlifyIdentity: netlifyIdentity;
+  interface Window {
+    netlifyIdentity: netlifyIdentity;
+  }
+}
+
+export default Vue.extend({
+  mounted: function() {
+
+    window.netlifyIdentity.on('init', (user: User) => {
+      
+    })
+    window.netlifyIdentity.on('login', (user: User) => {
+      window.netlifyIdentity.close()
+        this.$router.push({
+          path: '/home'
+        })
+    })
+
+    const user = window.netlifyIdentity.currentUser()
+
+
+    if (!user) {
+      window.netlifyIdentity.open()
     }
-}
-
-// Available after on('init') is invoked
-const user = window.netlifyIdentity.currentUser()
-
-
-if (!user) {
-  window.netlifyIdentity.open()
-
-  window.netlifyIdentity.on('init', (user: User) => console.log('init', user))
-  window.netlifyIdentity.on('login', (user: User) => console.log('login', user))
-}
-
-export default Vue.extend({})
+    else {
+      this.$router.push({
+        path: '/home'
+      })
+    }
+    
+  }
+})
 </script>
 
 <style>
