@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-    <iframe src="https://docs.google.com/document/d/1gOyb7na5EpBT78IQ1lcq0OqrMLRCCNLFp9C4WHtoRn8/edit?usp=sharing" height="1000" width="960"></iframe>
+    <iframe src="https://docs.google.com/document/d/1d3ZRPADVxah3MIOPP7nNAL54aMWWCN8_Q8UWvOiYjUI/edit?usp=sharing" height="1000" width="960"></iframe>
   </div>
 </template>
 
