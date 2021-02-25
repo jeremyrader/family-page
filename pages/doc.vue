@@ -1,11 +1,15 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-    <iframe src="https://docs.google.com/document/d/1d3ZRPADVxah3MIOPP7nNAL54aMWWCN8_Q8UWvOiYjUI/edit?usp=sharing" height="1000" width="960"></iframe>
+  <div>
+    <Nav />
+    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <iframe src="https://docs.google.com/document/d/1d3ZRPADVxah3MIOPP7nNAL54aMWWCN8_Q8UWvOiYjUI/edit?usp=sharing" height="1000" width="960"></iframe>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Nav from 'components/Nav.vue'
 
 interface netlifyIdentity {
   open: Function,
